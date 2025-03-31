@@ -1,0 +1,45 @@
+app:
+  host: '0.0.0.0'
+  port: 8001
+  cors: true
+  prefix: api
+  locale: zh_CN
+
+log:
+  levels:
+    - log
+    - debug
+    - warn
+    - error
+    - fatal
+
+jwt:
+  secret: '_5#y2LF4Q8nxzec]/'
+  expiresin: 7d
+  bufferTime: 1d
+  issuer: jwtIssuer
+
+captcha:
+  expiresin: 600000
+
+cache:
+  redis:
+    host: localhost
+    port: 6379
+    username: default
+    password: your-redis-pass
+
+db:
+  synchronize: false
+  logging: false
+  sourcefile: 'data-source.sql'
+  conns:
+    - name: default
+      type: 'mysql'
+      host: 127.0.0.1
+      port: 3306
+      username: you-username
+      password: you-password
+      database: you-database
+      dateStrings: true
+      entities: entities/*.entity{.ts,.js}
